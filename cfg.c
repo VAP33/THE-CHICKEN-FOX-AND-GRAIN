@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h> // Include ctype.h for tolower function
 
 void print_state(int chicken, int fox, int grain, int boat, int moves) {
     printf("***************************************\n");
@@ -8,10 +9,8 @@ void print_state(int chicken, int fox, int grain, int boat, int moves) {
     printf("Fox: %s\n", fox ? "Left" : "Right");
     printf("Grain: %s\n", grain ? "Left" : "Right");
     printf("Boat: %s\n", boat ? "Left" : "Right");
-    printf("Total Moves: %d\n", moves); // Display total moves
+    printf("Total Moves: %d\n", moves);
     printf("***************************************\n\n");
-
-    // Display the 4x4 grid
 
     printf("***************************************\n");
     for (int row = 0; row < 4; row++) {
@@ -20,7 +19,7 @@ void print_state(int chicken, int fox, int grain, int boat, int moves) {
             else if (row == 1 && col == (fox ? 0 : 3)) printf(" F ");
             else if (row == 2 && col == (grain ? 0 : 3)) printf(" G ");
             else if (row == 3 && col == (boat ? 0 : 3)) printf(" B ");
-            else if (col == 1 || col == 2) printf(" ~ "); // Middle columns replaced with ~
+            else if (col == 1 || col == 2) printf(" ~ ");
             else printf(" . ");
         }
         printf("\n");
@@ -33,7 +32,6 @@ int main() {
     int moves = 0; // Initialize move counter
 
     printf("Welcome to the Chicken, Fox, and Grain Game!\n");
-    
 
     while (1) {
         print_state(chicken, fox, grain, boat, moves);
@@ -54,6 +52,7 @@ int main() {
         char move;
         printf("Choose your move (c: transport chicken, f: transport fox, g: transport grain, n: do nothing): ");
         scanf(" %c", &move);
+        move = tolower(move); // Convert input to lowercase
 
         // Process the move
         int* item = NULL; // Pointer to the item being moved
