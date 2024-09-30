@@ -9,7 +9,7 @@ void print_state(int chicken, int fox, int grain, int boat, int moves) {
     printf("Fox: %s\n", fox ? "Left" : "Right");
     printf("Grain: %s\n", grain ? "Left" : "Right");
     printf("Boat: %s\n", boat ? "Left" : "Right");
-    printf("Total Moves: %d\n", moves);
+    printf("Total Valid Moves: %d\n", moves);
     printf("***************************************\n\n");
 
     printf("***************************************\n");
