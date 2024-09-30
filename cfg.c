@@ -5,7 +5,7 @@ void print_state(int chicken, int fox, int grain, int boat, int moves) {
     printf("***************************************\n");
     printf("            Current State              \n");
     printf("***************************************\n");
-    printf("Chicken: %s\n", chicken ? "Left" : "Right");
+    printf("Chicken: %s\n", chicken ? "Left" : "Right"); //Ternary Operator 1:0  True:False  Left:Right
     printf("Fox: %s\n", fox ? "Left" : "Right");
     printf("Grain: %s\n", grain ? "Left" : "Right");
     printf("Boat: %s\n", boat ? "Left" : "Right");
@@ -48,7 +48,8 @@ int main() {
             break;
         }
 
-        // Get user input for the next move
+        // move variable registers and stores user input.
+        //tolower(move) converts the input into lower case.
         char move;
         printf("Choose your move (c: transport chicken, f: transport fox, g: transport grain, n: do nothing): ");
         scanf(" %c", &move);
